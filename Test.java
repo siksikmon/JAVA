@@ -41,8 +41,9 @@ class Test{
 	                }
 	            }
 	        }
-	
+	        sc.close();
 	    }
+	    
 	    
 	}
 }

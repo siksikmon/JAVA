@@ -38,5 +38,7 @@ public class SuperClass {
 		sub.substract();
 		sub.mul();
 		sub.div();
+		
+	sc.close();
 	}
 }
