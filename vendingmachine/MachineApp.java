@@ -9,6 +9,7 @@ public class MachineApp {
 		Scanner sc = new Scanner(System.in);
 		
 		int ch;
+		int chs;
 		
 		while(true) {
 			do {
@@ -19,6 +20,7 @@ public class MachineApp {
 			if(ch==5)
 				break;
 			
+			if(ch>=1||ch<=5) {
 			switch(ch) {
 			case 1:
 				mc.insert_Coin();
@@ -33,12 +35,14 @@ public class MachineApp {
 				while(true) {
 					do {
 						out.println("1.메뉴 등록 2.메뉴 삭제 3.메뉴 수정 4.재고 등록 5.이전=>");
-					}while(ch<1||ch>5); 
+						chs =sc.nextInt();
+
+					}while(chs<1||chs>5); 
 					
-					if(ch==5)
+					if(chs==5)
 						break;
 					
-					switch(ch) {
+					switch(chs) {
 					case 1:
 						mc.enter_Menu();
 						break;
@@ -57,6 +61,7 @@ public class MachineApp {
 			break;
 			
 		}
+			}
 	}
 		sc.close();
 }

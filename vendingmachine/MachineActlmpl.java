@@ -15,14 +15,14 @@ public class MachineActlmpl implements MachineAct {
 	
 	@Override
 	public void insert_Coin() {
-		int ch;
+		int chr;
 		
 		out.println("돈을 넣어주세요.");
-		out.println("1:5000원 2:1000원 3:500원 4:100원");
+		out.println("1:5000원 2:1000원 3:500원 4:100원 5:잔돈반환");
 		
-		ch = sc.nextInt();
+		chr = sc.nextInt();
 		
-		switch(ch) {
+		switch(chr) {
 		
 		case 1:
 			remain_money = remain_money+5000;
@@ -40,6 +40,10 @@ public class MachineActlmpl implements MachineAct {
 			remain_money = remain_money+100;
 			out.println("투입금액:100원");
 			break;
+		case 5:
+			remain_money = remain_money-remain_money;
+			out.println("0원");
+			break;
 		}
 		
 		out.println("사용 가능 금액:"+remain_money);
@@ -51,8 +55,9 @@ public class MachineActlmpl implements MachineAct {
 		if(remain_money==0) {
 			out.println("반환할 돈이 없습니다.");
 		}
-		else {
-			remain_money = 0;
+		else if(remain_money>0){
+			out.println("반환할 수 있는 금액:"+remain_money+"원");
+			remain_money = remain_money-remain_money;
 			out.println("반환완료");
 			out.println("사용 가능 금액:"+remain_money);
 		}
